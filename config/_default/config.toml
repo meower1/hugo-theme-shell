@@ -30,7 +30,7 @@ ignoreErrors = ["error-remote-getjson"]
   # Note: result of the tree command
   userName = "meower1"
   pcName = "cloud"
-  workDir = "mydir"
+  workDir = "home"
   profile = "README.md"
 
   # Note: speed at which text is displayed on the terminal
