@@ -1,5 +1,6 @@
 baseURL = "https://aboutme-7gb.pages.dev/"
 title = "Shell"
+disableHugoGeneratorInject = true
 # author = "Yukuro"
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -59,6 +60,9 @@ ignoreErrors = ["error-remote-getjson"]
   Hi I am meower1!
   Nice to meet you!
   I'm a Web developer & Linux enthusiast residing in Persia
+  I'm currently working as a freelance software engineer
+
+  contact me at mail@meower1.dev
 
 .   |\__/,|   (`\
   _.|o o  |_   ) )
@@ -81,12 +85,12 @@ ignoreErrors = ["error-remote-getjson"]
     # ["Go", "https://golang.org/"],
     # ["Hugo", "/post/some-activity.md"],
     # ["Docker", "/post/some-activity.md"],
-    ["Python", ""],
-    ["Shell", ""],
-    ["Linux", ""],
-    ["Django", ""],
-    ["Fastapi", ""],
-    ["Docker", ""],
+    ["Python", "https://github.com/meower1/v2meow"],
+    ["Shell", "https://github.com/meower1/Supernova"],
+    ["Linux", "https://github.com/meower1/UniManageAPI"],
+    ["Fastapi", "https://github.com/meower1/UniManageAPI"],
+    ["Django", "https://github.com/meower1/Portfolio/"],
+    ["Docker", "https://github.com/meower1/UniManageAPI"],
   ]
 
 
