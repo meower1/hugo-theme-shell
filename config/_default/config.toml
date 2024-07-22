@@ -10,13 +10,11 @@ ignoreErrors = ["error-remote-getjson"]
   # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
   description = "meower1's Portfolio!"
   [Params.Terminal]
-  # Note: color scheme
-  # Note: You can choose between
   # Note: hugo-theme-shell original: ["shell-powershell", "shell-ubuntu", "shell-retro"]
   # Note: gogh theme: https://mayccoll.github.io/Gogh/
-  # scheme = "Molokai"
-  # scheme = "Monokai Pro"
   scheme = "Monokai Pro"
+  profile2 = "./socials/"
+  description2 = "meowmeow"
 
   # Note: in terminal
   # [userName]@[pcName]:~/$ cd [workDir]
@@ -78,19 +76,20 @@ ignoreErrors = ["error-remote-getjson"]
   [Params.Tree]
   use = true
   folderName = "my_activity"
+  folderName2 = "socials"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
-    # ["C/C++", "https://www.example.com/"],
-    # ["Python", "https://www.example.com/"],
-    # ["Go", "https://golang.org/"],
-    # ["Hugo", "/post/some-activity.md"],
-    # ["Docker", "/post/some-activity.md"],
     ["Python", "https://github.com/meower1/v2meow"],
     ["Shell", "https://github.com/meower1/Supernova"],
     ["Linux", "https://github.com/meower1/UniManageAPI"],
     ["Fastapi", "https://github.com/meower1/UniManageAPI"],
     ["Django", "https://github.com/meower1/Portfolio/"],
     ["Docker", "https://github.com/meower1/UniManageAPI"],
+  ]
+
+    files2 = [ 
+    ["Github", "https://github.com/meower1/"],
+    ["Stack Overflow", "https://stackoverflow.com/users/14029708/veganwilliam123"],
   ]
 
 

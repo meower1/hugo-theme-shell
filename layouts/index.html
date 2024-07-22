@@ -44,12 +44,38 @@
 
     {{ $end := $env }}
 
-    {{ $payload := delimit (slice $cd $cat $description $tree $leaf $end) "" }}
 
     {{ $ps1Delay := $.Site.Params.Terminal.ps1Delay }}
     {{ $stdoutDelay :=  $.Site.Params.Terminal.stdoutDelay }}
     {{ $commandDelay := $.Site.Params.Terminal.commandDelay }}
 
-    {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay ) }}
+    {{ $tree2 := "" }}
+    {{ $leaf2 := "" }}
+    {{ if .Site.Params.Tree.use }}
+        {{ $tree2 = printf "<span id='terminal'>tree ./%s/</span>" .Site.Params.Tree.folderName2 | safeHTML }}
+        {{ $leaf2 = printf "<strong><span id='dir'>./%s/</span></strong><br>" .Site.Params.Tree.folderName2 | safeHTML }}
+        {{ range $index2, $val2 := .Site.Params.Tree.files2 }}
+            {{ $ac2 := index $val2 0 }}
+            {{ $link2 := index $val2 1 }}
+    
+            <!-- Determine if link is internal or external -->
+            {{ $l2 := $.Site.GetPage $link2 }}
+            {{ if $l2 }}
+                {{ $link2 = $l2.Permalink }}
+            {{ end }}
+            
+            <!-- Append to $leaf2 with correct tree branch symbol -->
+            {{ if eq (add $index2 1) (len $.Site.Params.Tree.files2) }}
+                {{ $leaf2 = printf "%s<span id='terminal'>└── <a href='%s'>%s</a></span>" $leaf2 $link2 $ac2 | safeHTML }}
+            {{ else }}
+                {{ $leaf2 = printf "%s<span id='terminal'>├── <a href='%s'>%s</a></span><br>" $leaf2 $link2 $ac2 | safeHTML }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $payload := delimit (slice $cd $cat $description $tree $leaf $tree2 $leaf2 $end) "" }}
+
+
+    {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "leaf2" $leaf2 "tree2" $tree2 "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay ) }}
 
 {{ end }}
