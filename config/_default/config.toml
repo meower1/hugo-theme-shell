@@ -90,7 +90,7 @@ ignoreErrors = ["error-remote-getjson"]
     files2 = [ 
     ["Github", "https://github.com/meower1/"],
     ["Discord", "https://discord.gg/Cxx6etzA"],
-    ["Stack Overflow", "https://stackoverflow.com/users/14029708/veganwilliam123"],
+    # ["Stack Overflow", "https://stackoverflow.com/users/14029708/veganwilliam123"],
     ["3riangle Team", "https://3riangle.ir/"],
   ]
 
