@@ -73,9 +73,34 @@
         {{ end }}
     {{ end }}
 
-    {{ $payload := delimit (slice $cd $cat $description $tree $leaf $tree2 $leaf2 $end) "" }}
+    {{ $tree3 := "" }}
+    {{ $leaf3 := "" }}
+    {{ if .Site.Params.Tree.use }}
+        {{ $tree3 = printf "<span id='terminal'>tree ./%s/</span>" .Site.Params.Tree.folderName3 | safeHTML }}
+        {{ $leaf3 = printf "<strong><span id='dir'>./%s/</span></strong><br>" .Site.Params.Tree.folderName3 | safeHTML }}
+        {{ range $index3, $val3 := .Site.Params.Tree.myteam }}
+            {{ $ac3 := index $val3 0 }}
+            {{ $link3 := index $val3 1 }}
+    
+            <!-- Determine if link is internal or external -->
+            {{ $l3 := $.Site.GetPage $link3 }}
+            {{ if $l3 }}
+                {{ $link3 = $l3.Permalink }}
+            {{ end }}
+            
+            <!-- Append to $leaf3 with correct tree branch symbol -->
+            {{ if eq (add $index3 1) (len $.Site.Params.Tree.myteam) }}
+                {{ $leaf3 = printf "%s<span id='terminal'>└── <a href='%s'>%s</a></span>" $leaf3 $link3 $ac3 | safeHTML }}
+            {{ else }}
+                {{ $leaf3 = printf "%s<span id='terminal'>├── <a href='%s'>%s</a></span><br><br><br>" $leaf3 $link3 $ac3 | safeHTML }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
 
 
-    {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "leaf2" $leaf2 "tree2" $tree2 "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay ) }}
+    {{ $payload := delimit (slice $cd $cat $description $tree $leaf $tree2 $leaf2 $leaf3 $tree3 $end) "" }}
+
+
+    {{ partial "partials/typeIndex.html" (dict "context" . "env" $env "cd" $cd "envWithDir" $envWithDir "cat" $cat "description" $description "tree" $tree "leaf" $leaf "leaf2" $leaf2 "tree2" $tree2 "leaf3" $leaf3 "tree3" $tree3 "ps1delay" $ps1Delay "stdoutdelay" $stdoutDelay "commanddelay" $commandDelay ) }}
 
 {{ end }}
