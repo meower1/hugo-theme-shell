@@ -83,12 +83,12 @@ ignoreErrors = ["error-remote-getjson"]
   folderName3 = "myteam"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
-    ["Python", "https://github.com/meower1/v2meow"],
-    ["Shell", "https://github.com/meower1/Supernova"],
-    ["Linux", "https://github.com/meower1/UniManageAPI"],
-    ["Fastapi", "https://github.com/meower1/UniManageAPI"],
-    ["Django", "https://github.com/meower1/Portfolio/"],
-    ["Docker", "https://github.com/meower1/UniManageAPI"],
+    ["Warpgen", "https://github.com/meower1/warpgen"],
+    ["UniManageAPI", "https://github.com/meower1/UniManageAPI"],
+    ["v2meow", "https://github.com/meower1/v2meow"],
+    ["Supernova", "https://github.com/meower1/Supernova"],
+    ["Reality-Sni-Finder", "https://github.com/meower1/Reality-SNI-Finder"],
+    ["SimplePortfolio", "https://github.com/meower1/Portfolio/"],
   ]
 
     files2 = [ 
