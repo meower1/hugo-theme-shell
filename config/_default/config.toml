@@ -17,8 +17,7 @@ ignoreErrors = ["error-remote-getjson"]
   description2 = "meowmeow"
 
 
-  profile3 = "./myteam/"
-  description3 = "meowmeow"
+
   # Note: in terminal
   # [userName]@[pcName]:~/$ cd [workDir]
   # [userName]@[pcName]:~/[workDir]$ cat [profile]
@@ -80,7 +79,6 @@ ignoreErrors = ["error-remote-getjson"]
   use = true
   folderName = "my_activity"
   folderName2 = "socials"
-  folderName3 = "myteam"
   # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
   files = [ 
     ["Warpgen", "https://github.com/meower1/warpgen"],
@@ -97,10 +95,6 @@ ignoreErrors = ["error-remote-getjson"]
     # ["Stack Overflow", "https://stackoverflow.com/users/14029708/veganwilliam123"],
     ["Mastodon", "https://mastodon.social/@meower1"],
   ]
-
-    myteam = [
-      ["3riangle Team", "https://3riangle.ir/"]
-      ]
 
 [module]
   [module.hugoVersion]
